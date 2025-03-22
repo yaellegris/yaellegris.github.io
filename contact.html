@@ -19,14 +19,107 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .contact-content {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        min-height: calc(100vh - 100px); /* Account for nav height */
+        display: flex;
+        align-items: center;
+      }
+
+      .form-wrapper {
+        width: 100%;
+        margin: 0;
+      }
+
+      .field-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .name-fields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .form-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+
+      .form-item label {
+        font-size: 0.85rem;
+        color: rgb(65, 65, 67);
+        font-weight: 500;
+      }
+
+      .form-item .required {
+        color: #666;
+        font-size: 0.75rem;
+        margin-left: 0.25rem;
+      }
+
+      .form-item input,
+      .form-item textarea {
+        padding: 0.6rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.9rem;
+        transition: border-color 0.3s ease;
+        width: 100%;
+      }
+
+      .form-item textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .form-item input:focus,
+      .form-item textarea:focus {
+        outline: none;
+        border-color: rgb(65, 65, 67);
+      }
+
+      .submit-button {
+        background-color: rgb(65, 65, 67);
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 1rem;
+      }
+
+      .submit-button:hover {
+        background-color: rgb(45, 45, 47);
+      }
+
+      @media (max-width: 768px) {
+        .name-fields {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body class="internal-page">
     <div class="contact-container">
       <nav class="site-nav">
         <div class="nav-links-left">
-          <a href="work.html">Work</a>
-          <a href="about.html">About</a>
-          <a href="contact.html" class="current-page">Contact</a>
+          <a href="work.html">work</a>
+          <a href="about.html">about</a>
+          <a href="contact.html" class="current-page">contact</a>
         </div>
         <h1 class="site-title">
           <a href="index.html">Yaël Legris</a>
@@ -35,11 +128,66 @@
           <!-- Your right-side navigation links -->
         </div>
       </nav>
-      <h1 class="page-title">Contact</h1>
       <div class="contact-content">
-        <!-- Add your contact information or form here -->
+        <form class="form-wrapper" action="#" method="POST">
+          <div class="field-list">
+            <div class="name-fields">
+              <div class="form-item">
+                <label for="fname"
+                  >First Name
+                  <span class="required">(required)</span></label
+                >
+                <input type="text" id="fname" name="fname" required />
+              </div>
+              <div class="form-item">
+                <label for="lname"
+                  >Last Name
+                  <span class="required">(required)</span></label
+                >
+                <input type="text" id="lname" name="lname" required />
+              </div>
+            </div>
+            <div class="form-item">
+              <label for="email"
+                >Email <span class="required">(required)</span></label
+              >
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-item">
+              <label for="subject"
+                >Subject
+                <span class="required">(required)</span></label
+              >
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                required
+              />
+            </div>
+            <div class="form-item">
+              <label for="message"
+                >Message
+                <span class="required">(required)</span></label
+              >
+              <textarea
+                id="message"
+                name="message"
+                required
+              ></textarea>
+            </div>
+          </div>
+          <button type="submit" class="submit-button">
+            Send Message
+          </button>
+        </form>
       </div>
     </div>
+    <footer class="footer">
+      <div class="footer__content">
+        <p>&copy; 2025 Yaël Legris. All rights reserved.</p>
+      </div>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
