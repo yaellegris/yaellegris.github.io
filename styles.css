@@ -141,8 +141,10 @@ body {
 /* Footer */
 .footer {
   padding: 2rem;
-  background-color: var(--color-secondary);
-  color: var(--color-primary);
+  color: #8f8f94;
+  margin-top: auto;
+  position: relative;
+  z-index: 2;
 }
 
 .footer__content {
