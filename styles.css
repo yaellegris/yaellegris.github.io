@@ -157,7 +157,7 @@ h6 {
   font-size: 2rem;
   font-weight: 400;
   text-align: center;
-  transform: translateY(-35px); /* Additional upward shift */
+  transform: translateY(-40px); /* Additional upward shift */
   font-family: var(--font-display);
 }
 
