@@ -44,7 +44,8 @@
 }
 
 /* Non-home page styles */
-.internal-page .site-nav a {
+.internal-page .site-nav .nav-links-left a,
+.internal-page .site-nav .nav-links-right a {
   color: #666;
   text-decoration: none;
   font-size: 1.1rem;
@@ -52,14 +53,15 @@
   transition: opacity 0.3s ease;
 }
 
-.internal-page .site-nav .current-page {
+.internal-page .site-nav .nav-links-left a.current-page,
+.internal-page .site-nav .nav-links-right a.current-page {
   text-decoration: underline;
   text-underline-offset: 5px;
 }
 
 /* Internal page specific title color */
 .internal-page .site-title a {
-  color: #000;
+  color: #38383b;
 }
 
 /* Home page styles */
