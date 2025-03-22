@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Work - Yaël Legris</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .work-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .masonry-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .work-item {
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      .work-item .image-wrap {
+        position: relative;
+        width: 100%;
+        background: #f5f5f5;
+      }
+
+      .work-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .work-item-title {
+        font-size: 1.1rem;
+        margin: 0.5rem 0 0 0;
+        font-weight: 500;
+      }
+
+      @media (max-width: 768px) {
+        .masonry-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+
+        .work-container {
+          padding: 0 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="work-container">
+      <nav class="home-nav">
+        <div class="nav-links-left">
+          <a href="work.html">Work</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <h1 class="home-title">
+          <a href="index.html">Yaël Legris</a>
+        </h1>
+        <div class="nav-links-right">
+          <!-- Your right-side navigation links -->
+        </div>
+      </nav>
+
+      <div class="masonry-grid">
+        <div class="work-item">
+          <img
+            src="images/work/grief_main.png"
+            alt="Grief Series - Main Piece"
+          />
+        </div>
+        <div class="work-item">
+          <img
+            src="images/work/pascal_main.png"
+            alt="Pascal - Main Piece"
+          />
+        </div>
+        <div class="work-item">
+          <img src="images/work/ali.png" alt="Ali Portrait" />
+        </div>
+        <div class="work-item">
+          <img
+            src="images/work/Legris_Yael_Red_Painting.jpg"
+            alt="Red Painting"
+          />
+        </div>
+        <div class="work-item">
+          <img src="images/work/Dereck-PopUp.jpg" alt="Dereck" />
+        </div>
+        <div class="work-item">
+          <img
+            src="images/work/self_portrait.jpg"
+            alt="Self Portrait"
+          />
+        </div>
+        <div class="work-item">
+          <img
+            src="images/work/untitled (2021).png"
+            alt="Untitled 2021"
+          />
+        </div>
+        <div class="work-item">
+          <img
+            src="images/work/untitled (2019).png"
+            alt="Untitled 2019"
+          />
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
