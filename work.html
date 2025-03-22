@@ -87,51 +87,65 @@
       </div>
     </nav>
     <div class="work-container">
-      <div class="masonry-grid">
-        <div class="work-item">
-          <img
-            src="images/work/grief_main.png"
-            alt="Grief Series - Main Piece"
-          />
-        </div>
-        <div class="work-item">
-          <img
-            src="images/work/pascal_main.png"
-            alt="Pascal - Main Piece"
-          />
-        </div>
-        <div class="work-item">
-          <img src="images/work/ali.png" alt="Ali Portrait" />
-        </div>
-        <div class="work-item">
-          <img
-            src="images/work/Legris_Yael_Red_Painting.jpg"
-            alt="Red Painting"
-          />
-        </div>
-        <div class="work-item">
-          <img src="images/work/Dereck-PopUp.jpg" alt="Dereck" />
-        </div>
-        <div class="work-item">
-          <img
-            src="images/work/self_portrait.jpg"
-            alt="Self Portrait"
-          />
-        </div>
-        <div class="work-item">
-          <img
-            src="images/work/untitled (2021).png"
-            alt="Untitled 2021"
-          />
-        </div>
-        <div class="work-item">
-          <img
-            src="images/work/untitled (2019).png"
-            alt="Untitled 2019"
-          />
-        </div>
+      <div class="masonry-grid" id="masonry-grid">
+        <!-- Images will be populated here by JavaScript -->
       </div>
     </div>
+    <script>
+      // Array of image information
+      const workImages = [
+        { src: 'images/work/Céleste-PopUp.jpg', alt: 'Céleste' },
+        { src: 'images/work/Dereck-PopUp.jpg', alt: 'Dereck' },
+        {
+          src: 'images/work/Legris_Yael_Red_Painting.jpg',
+          alt: 'Red Painting',
+        },
+        {
+          src: "images/work/Sittin'With_A_Demon_PopUp_small.jpg",
+          alt: 'Sitting With A Demon',
+        },
+        { src: 'images/work/ali.png', alt: 'Ali Portrait' },
+        { src: 'images/work/grief_1.png', alt: 'Grief Series 1' },
+        {
+          src: 'images/work/grief_main.png',
+          alt: 'Grief Series Main',
+        },
+        { src: 'images/work/image000081.png', alt: 'Image 81' },
+        { src: 'images/work/pascal_main.png', alt: 'Pascal Main' },
+        {
+          src: 'images/work/self_portrait.jpg',
+          alt: 'Self Portrait',
+        },
+        {
+          src: 'images/work/untitled (2019).png',
+          alt: 'Untitled 2019',
+        },
+        {
+          src: 'images/work/untitled (2021).png',
+          alt: 'Untitled 2021',
+        },
+      ];
+
+      // Function to populate the grid
+      function populateGrid() {
+        const grid = document.getElementById('masonry-grid');
+
+        workImages.forEach((image) => {
+          const workItem = document.createElement('div');
+          workItem.className = 'work-item';
+
+          const img = document.createElement('img');
+          img.src = image.src;
+          img.alt = image.alt;
+
+          workItem.appendChild(img);
+          grid.appendChild(workItem);
+        });
+      }
+
+      // Call the function when the page loads
+      document.addEventListener('DOMContentLoaded', populateGrid);
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
