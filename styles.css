@@ -93,7 +93,7 @@ body {
 .nav-links a {
   color: var(--color-secondary);
   text-decoration: none;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   font-weight: 300;
   transition: opacity 0.3s ease;
 }
@@ -106,7 +106,7 @@ body {
 .nav-links-right a {
   color: var(--color-secondary);
   text-decoration: none;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   font-weight: 300;
   transition: opacity 0.3s ease;
   font-family: var(--font-primary);
@@ -140,7 +140,7 @@ body {
 
 /* Footer */
 .footer {
-  padding: 2rem;
+  padding: 1rem;
   color: #8f8f94;
   margin-top: auto;
   position: relative;
