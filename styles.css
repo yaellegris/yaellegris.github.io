@@ -159,7 +159,7 @@ body {
 .image-container {
   display: flex; /* Use flexbox for centering */
   justify-content: center; /* Horizontally center the image */
-  padding: 2rem; /* Add space on the left and right */
+  padding: 20rem; /* Add space on the left and right */
 }
 
 .image-container img {
