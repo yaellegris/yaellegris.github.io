@@ -155,6 +155,20 @@ body {
   text-align: center;
 }
 
+/* General styles for the image container */
+.image-container {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Horizontally center the image */
+  padding: 2rem; /* Add space on the left and right */
+}
+
+.image-container img {
+  max-width: 80%; /* Ensure the image scales responsively */
+  height: auto; /* Maintain the aspect ratio */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for aesthetics */
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
   .nav-links {
@@ -163,17 +177,5 @@ body {
 
   .home-title {
     font-size: 2.5rem;
-  }
-  .image-container {
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Horizontally center the image */
-    padding: 2rem; /* Add space on the left and right */
-  }
-  
-  .image-container img {
-    max-width: 80%; /* Ensure the image scales responsively */
-    height: auto; /* Maintain the aspect ratio */
-    border-radius: 8px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for aesthetics */
   }
 }
