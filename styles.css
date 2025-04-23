@@ -157,7 +157,8 @@ body {
 
 /* General styles for the image container */
 .image-container {
-  display: flex; /* Use flexbox for centering */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack the image and caption vertically */
   justify-content: center; /* Horizontally center the image */
   padding: 2rem; /* Add space on the left and right */
 }
@@ -173,7 +174,7 @@ body {
   font-family: 'Inter', sans-serif; /* Match the font of the nav links */
   font-size: 0.8rem; /* Make the text smaller */
   color: var(--color-primary); /* Use the same color as the nav links */
-  text-align: lefy; /* Align the text under the image */
+  text-align: left; /* Align the text under the image */
   margin-top: 0.5rem; /* Add some space above the caption */
 }
 
