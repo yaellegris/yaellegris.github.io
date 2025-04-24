@@ -70,12 +70,12 @@
 }
 
 @media (max-width: 768px) {
-  .site-nav {
-    padding: 1rem;
+   .site-nav {
     display: flex; /* Use flexbox for layout */
     justify-content: space-between; /* Space between nav links and title */
     align-items: center; /* Vertically align items */
     width: 100%; /* Ensure the navigation bar spans the full width */
+    box-sizing: border-box; /* Include padding in the width calculation */
   }
 
   .nav-links-left {
