@@ -185,6 +185,8 @@ body {
   width: 70%; /* Adjust the width to make it smaller */
   height: auto; /* Maintain the aspect ratio */
   margin: 0 auto; /* Center the image */
+  border: none; 
+  box-shadow: none; 
 }
 
 
