@@ -234,13 +234,12 @@ body {
       padding: 1rem; /* Add padding to the footer for smaller screens */
       font-size: 0.8rem; /* Make the footer text slightly smaller */
   }
-  
+
     .site-title {
-      font-size: 1.0rem; /* Reduce the site title size on smaller screens */
-      text-align: right; /* Align the text content to the right */
-      margin-right: 0; /* Ensure no extra margin on the right */
-      margin-left: auto; /* Push the title completely to the right */
-      margin-bottom: 0; /* Remove unnecessary margin */
-      width: auto; /* Allow the title to take up only the necessary space */
+      font-size: 1.0rem !important; /* Make the title smaller */
+      text-align: right !important; /* Force the title text to align to the right */
+      margin-left: auto !important; /* Push the title completely to the right */
+      margin-right: 0 !important; /* Ensure no extra margin on the right */
+      width: auto !important; /* Remove the 33.33% width restriction */
     }
   }
