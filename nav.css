@@ -72,13 +72,19 @@
 @media (max-width: 768px) {
   .site-nav {
     padding: 1rem;
+    display: flex; /* Ensure flexbox layout */
+    justify-content: space-between; /* Space between nav links and title */
+    align-items: center; /* Vertically align items */
   }
 
   .nav-links-left {
-    gap: 0.3rem;
+    gap: 0.3rem; /* Reduce spacing between nav links */
   }
 
   .site-title {
-    font-size: 1.0rem; /* Keep consistent with desktop */
+    font-size: 1.0rem; /* Make the title smaller */
+    text-align: right; /* Align the title to the right */
+    margin-left: auto; /* Push the title to the far right */
+    width: auto; /* Allow the title to take up only the necessary space */
   }
 }
