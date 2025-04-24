@@ -204,7 +204,7 @@ body {
       display: flex; /* Ensure flexbox layout is applied */
       flex-direction: row; /* Keep navigation links and header in a row */
       align-items: center; /* Vertically align items */
-      justify-content: space-between; /* Add space between the header and nav links */
+      justify-content: space-between; /* Space between nav links and title */
       padding: 1rem; /* Add padding around the navigation */
       width: 100%; /* Ensure the navigation takes up the full width */
     }
