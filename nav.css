@@ -81,6 +81,12 @@
     .nav-links-left {
       gap: 0.4rem; /* Reduce spacing between nav links */
     }
+
+    /* Make space for the title */
+    .nav-links-right {
+      visibility: hidden !important; /* Hide but keep space */
+      width: auto !important;
+    }
   
     .site-title {
       font-size: 1.0rem; /* Make the title smaller */
