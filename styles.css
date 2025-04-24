@@ -204,12 +204,13 @@ body {
 
     .nav-links-left {
       display: flex; /* Ensure the links are displayed in a row */
-      gap: 1rem; /* Add spacing between links */
+      gap: 0.5rem; /* Add spacing between links */
       width: auto; /* Allow the links to take up only the necessary space */
       text-align: left; /* Align the content to the left */
     }
   
     .nav-links-left a {
+      font-size: 0.7rem; /* Reduce the font size of the links */
       margin-bottom: 0; /* Remove bottom margin for inline links */
       text-align: left; /* Align text to the left */
     }
@@ -226,7 +227,8 @@ body {
   
     header .site-title {  
       font-size: 1.0rem; /* Reduce the site title size on smaller screens */
-      text-align: center; /* Center the site title */
+      text-align: right; /* Center the site title */
       margin-bottom: 0; /* Remove unnecessary margin */
+      width: auto; /* Allow the title to take up only the necessary space */
     }
   }
