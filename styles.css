@@ -225,7 +225,7 @@ body {
       font-size: 0.8rem; /* Make the footer text slightly smaller */
   }
   
-    header .site-title {  
+    .site-title {  
       font-size: 1.0rem; /* Reduce the site title size on smaller screens */
       text-align: right; /* Center the site title */
       margin-bottom: 0; /* Remove unnecessary margin */
