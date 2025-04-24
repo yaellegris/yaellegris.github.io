@@ -82,7 +82,8 @@
     gap: 0.4rem; /* Reduce spacing between nav links */
   }
 
-  .site-title {
+  .site-title a {
+    text-align: left; /* Override inherited text alignment */
     font-size: 1.0rem; /* Make the title smaller */
     text-align: right; /* Align the title text to the right */
     margin-left: auto; /* Push the title to the far right */
