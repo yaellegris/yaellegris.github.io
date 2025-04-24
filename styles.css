@@ -159,14 +159,14 @@ body {
 .image-container {
   display: flex; /* Use flexbox for layout */
   flex-direction: column; /* Stack the image and caption vertically */
-  justify-content: center; /* Horizontally center the image */
-  padding: 2rem; /* Add space on the left and right */
+  align-items: center; /* Center the image horizontally */
+  padding: 2rem; /* Add space around the container */
 }
 
 .image-container img {
   max-width: 60%; /* Ensure the image does not exceed the width of its container */
   height: auto; /* Maintain the aspect ratio */
-  border-radius: 0px; /* Remove rounded corners */
+  border-radius: 0; /* Remove rounded corners */
   box-shadow: none; /* Remove the shadow for a cleaner look */
 }
 
@@ -174,8 +174,9 @@ body {
   font-family: 'Inter', sans-serif; /* Match the font of the nav links */
   font-size: 0.8rem; /* Make the text smaller */
   color: var(--color-primary); /* Use the same color as the nav links */
-  text-align: left; /* Align the text under the image */
+  text-align: left; /* Align the text to the left */
   margin-top: 0.5rem; /* Add some space above the caption */
+  width: 60%; /* Match the width of the image */
 }
 
 @media (max-width: 768px) {
