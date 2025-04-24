@@ -180,59 +180,42 @@ body {
 }
 
 @media (max-width: 768px) {
-  .image-container {
-    padding: 1rem; /* Reduce padding on smaller screens */
-  }
-
-  .image-container img {
-    max-width: 90%; /* Slightly reduce the image size on smaller screens */
-  }
-}
-
-body {
-  margin: 0; /* Remove default margin */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-  .image-container img {
-    max-width: 90%; /* Make the images smaller on mobile screens */
-  }
-
-  .image-caption {
-    width: 90%; /* Match the width of the image */
-    font-size: 0.7rem; /* Make the text slightly smaller */
-  }
+   .image-container {
+      padding: 1rem; /* Reduce padding on smaller screens */
+    }
   
-  .site-nav {
+    .image-container img {
+      max-width: 90%; /* Make the images smaller on mobile screens */
+    }
+  
+    .image-caption {
+      width: 90%; /* Match the width of the image */
+      font-size: 0.7rem; /* Make the text slightly smaller */
+    }
+  
+    .site-nav {
       flex-direction: column; /* Stack navigation links vertically */
       align-items: flex-start; /* Align links to the left */
       padding: 1rem; /* Add padding around the navigation */
-  }
+    }
+  
     .nav-links-left a {
       margin-bottom: 0.5rem; /* Add spacing between links */
       text-align: left; /* Align text to the left */
     }
+  
+    body {
+      margin: 0; /* Remove default margin */
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+  
+    .footer__content {
+      padding: 1rem; /* Add padding to the footer for smaller screens */
+      font-size: 0.8rem; /* Make the footer text slightly smaller */
   }
-
-  body {
-    margin: 0; /* Remove default margin */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-  }
-
-  .footer__content {
-    padding: 1rem; /* Add padding to the footer for smaller screens */
-  }
-} 
-
-  @media (max-width: 768px) {
+  
     .site-title {
       font-size: 1.5rem; /* Reduce the site title size on smaller screens */
       text-align: center; /* Center the site title */
-    }
-  
-    .footer__content p {
-      font-size: 0.8rem; /* Make the footer text slightly smaller */
     }
   }
