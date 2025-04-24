@@ -204,14 +204,16 @@ body {
     width: 90%; /* Match the width of the image */
     font-size: 0.7rem; /* Make the text slightly smaller */
   }
-
+  
   .site-nav {
-    flex-direction: column; /* Stack navigation links vertically */
-    align-items: center; /* Center the navigation links */
+      flex-direction: column; /* Stack navigation links vertically */
+      align-items: flex-start; /* Align links to the left */
+      padding: 1rem; /* Add padding around the navigation */
   }
-
-  .nav-links-left a {
-    margin-bottom: 0.5rem; /* Add spacing between links */
+    .nav-links-left a {
+      margin-bottom: 0.5rem; /* Add spacing between links */
+      text-align: left; /* Align text to the left */
+    }
   }
 
   body {
