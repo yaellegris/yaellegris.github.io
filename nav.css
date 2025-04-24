@@ -70,24 +70,23 @@
 }
 
 @media (max-width: 768px) {
-   .site-nav {
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Space between nav links and title */
-    align-items: center; /* Vertically align items */
-    width: 100%; /* Ensure the navigation bar spans the full width */
-    box-sizing: border-box; /* Include padding in the width calculation */
+    .site-nav {
+      display: flex; /* Use flexbox for layout */
+      justify-content: space-between; /* Space between nav links and title */
+      align-items: center; /* Vertically align items */
+      width: 100%; /* Ensure the navigation bar spans the full width */
+      box-sizing: border-box; /* Include padding in the width calculation */
+    }
+  
+    .nav-links-left {
+      gap: 0.4rem; /* Reduce spacing between nav links */
+    }
+  
+    .site-title {
+      font-size: 1.0rem; /* Make the title smaller */
+      text-align: right; /* Align the title text to the right */
+      margin-left: auto; /* Push the title completely to the right */
+      margin-right: 0; /* Ensure no extra margin on the right */
+      width: auto; /* Remove the 33.33% width restriction */
+    }
   }
-
-  .nav-links-left {
-    gap: 0.4rem; /* Reduce spacing between nav links */
-  }
-
-  .site-title a {
-    text-align: left; /* Override inherited text alignment */
-    font-size: 1.0rem; /* Make the title smaller */
-    text-align: right; /* Align the title text to the right */
-    margin-left: auto; /* Push the title to the far right */
-    margin-right: 0; /* Ensure no extra margin on the right */
-    width: auto; /* Remove the 33.33% width restriction */
-  }
-}
