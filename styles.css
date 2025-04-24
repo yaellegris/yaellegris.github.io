@@ -235,11 +235,15 @@ body {
       font-size: 0.8rem; /* Make the footer text slightly smaller */
   }
 
-    .home-title {
-      font-size: 1.0rem !important; /* Make the title smaller */
-      text-align: right !important; /* Force the title text to align to the right */
-      margin-left: auto !important; /* Push the title completely to the right */
-      margin-right: 0 !important; /* Ensure no extra margin on the right */
-      width: auto !important; /* Remove the 33.33% width restriction */
-    }
+  .home-title {
+    font-size: 1.0rem !important; /* Make the title smaller */
+    text-align: right !important; /* Align the title text to the right */
+    margin-left: auto !important; /* Push the title to the right */
+    margin-right: 0 !important; /* Remove right margin */
+    width: auto !important; /* Allow natural width instead of fixed 33.33% */
+    padding-right: 1rem; /* Add some padding on the right */
+    flex-grow: 1; /* Allow it to take available space */
+    display: flex; /* Enable flexbox */
+    justify-content: flex-end; /* Right align the content */
   }
+ }
