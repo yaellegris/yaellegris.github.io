@@ -220,7 +220,7 @@ body {
     }
   
     .nav-links-left a {
-      font-size: 0.7rem; /* Reduce the font size of the links */
+      font-size: 0.6rem; /* Reduce the font size of the links */
       margin-bottom: 0; /* Remove bottom margin for inline links */
       text-align: left; /* Align text to the left */
     }
