@@ -82,7 +82,7 @@
       gap: 0.4rem; /* Reduce spacing between nav links */
     }
   
-    .home-title {
+    .site-title {
       font-size: 1.0rem; /* Make the title smaller */
       text-align: right; /* Align the title text to the right */
       margin-left: auto; /* Push the title completely to the right */
