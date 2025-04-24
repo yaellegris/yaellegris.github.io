@@ -186,6 +186,13 @@ body {
   margin: 0 auto; /* Center the image */
 }
 
+/* Target the "Grief" image specifically */
+.masonry-grid img[src*="grief_main.png"] {
+  width: 120%; /* Increase the width to make it larger */
+  height: auto; /* Maintain the aspect ratio */
+  margin: 0 auto; /* Center the image horizontally */
+}
+
 @media (max-width: 768px) {
    .image-container {
       padding: 1rem; /* Reduce padding on smaller screens */
