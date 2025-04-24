@@ -181,7 +181,7 @@ body {
 
 /* Target the Interior 1 image specifically */
 .masonry-grid img[src*="interior1(2025).png"] {
-  width: 90%; /* Adjust the width to make it smaller */
+  width: 70%; /* Adjust the width to make it smaller */
   height: auto; /* Maintain the aspect ratio */
   margin: 0 auto; /* Center the image */
 }
