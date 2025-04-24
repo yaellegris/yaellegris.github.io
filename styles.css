@@ -180,17 +180,6 @@ body {
   width: 60%; /* Match the width of the image */
 }
 
-/* Target the Interior 1 image specifically */
-.masonry-grid img[src*="interior1(2025).png"] {
-  width: 70%; /* Adjust the width to make it smaller */
-  height: auto; /* Maintain the aspect ratio */
-  margin: 0 auto; /* Center the image */
-  border: none; 
-  box-shadow: none; 
-}
-
-
-
 @media (max-width: 768px) {
    .image-container {
       padding: 1rem; /* Reduce padding on smaller screens */
