@@ -197,6 +197,12 @@ body {
       flex-direction: column; /* Stack navigation links vertically */
       align-items: flex-start; /* Align links to the left */
       padding: 1rem; /* Add padding around the navigation */
+      width: 100%; /* Ensure the navigation takes up the full width */
+    }
+
+    .nav-links-left {
+      width: 100%; /* Make the container take up the full width */
+      text-align: left; /* Align the content to the left */
     }
   
     .nav-links-left a {
