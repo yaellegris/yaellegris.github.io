@@ -83,7 +83,7 @@
 
   .site-title {
     font-size: 1.0rem; /* Make the title smaller */
-    text-align: right; /* Align the title to the right */
+    text-align: right; /* Align the title text to the right */
     margin-left: auto; /* Push the title to the far right */
     width: auto; /* Allow the title to take up only the necessary space */
   }
