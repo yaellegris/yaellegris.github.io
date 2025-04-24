@@ -209,10 +209,9 @@ body {
     }
   
     .site-nav {
-      display: flex; /* Ensure flexbox layout is applied */
-      flex-direction: row; /* Keep navigation links and header in a row */
-      align-items: center; /* Vertically align items */
+      display: flex; /* Use flexbox for layout */
       justify-content: space-between; /* Space between nav links and title */
+      align-items: center; /* Vertically align items */
       padding: 1rem; /* Add padding around the navigation */
       width: 100%; /* Ensure the navigation takes up the full width */
     }
@@ -240,7 +239,7 @@ body {
       font-size: 0.8rem; /* Make the footer text slightly smaller */
   }
   
-    .site-title {  
+    .site-title {
       font-size: 1.0rem; /* Reduce the site title size on smaller screens */
       text-align: right; /* Align the text content to the right */
       margin-left: auto; /* Push the title completely to the right */
