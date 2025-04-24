@@ -246,4 +246,14 @@ body {
       display: flex; /* Enable flexbox */
       justify-content: flex-end; /* Right align the content */
   }
+
+    .home-title {
+      font-size: 1.0rem !important;
+      text-align: right !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+      width: auto !important;
+      padding-right: 0.5rem;
+      flex-shrink: 0;
+    }
  }

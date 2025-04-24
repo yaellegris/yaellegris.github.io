@@ -89,4 +89,15 @@
       margin-right: 0; /* Ensure no extra margin on the right */
       width: auto; /* Remove the 33.33% width restriction */
     }
+
+    .home-title {
+      font-size: 1.0rem !important;
+      text-align: right !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+      width: auto !important;
+      padding-right: 0.5rem;
+      flex-shrink: 0;
+    }
+    
   }
