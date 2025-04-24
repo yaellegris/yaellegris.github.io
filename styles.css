@@ -214,7 +214,7 @@ body {
 
     .nav-links-left {
       display: flex; /* Ensure the links are displayed in a row */
-      gap: 0.3rem; /* Add spacing between links */
+      gap: 0.5rem; /* Add spacing between links */
       width: auto; /* Allow the links to take up only the necessary space */
       text-align: left; /* Align the content to the left */
     }
