@@ -194,22 +194,26 @@ body {
     }
   
     .site-nav {
-      flex-direction: column; /* Stack navigation links vertically */
-      align-items: flex-start; /* Align links to the left */
+      display: flex; /* Ensure flexbox layout is applied */
+      flex-direction: row; /* Keep navigation links and header in a row */
+      align-items: center; /* Vertically align items */
+      justify-content: space-between; /* Add space between the header and nav links */
       padding: 1rem; /* Add padding around the navigation */
       width: 100%; /* Ensure the navigation takes up the full width */
     }
 
     .nav-links-left {
-      width: 100%; /* Make the container take up the full width */
+      display: flex; /* Ensure the links are displayed in a row */
+      gap: 1rem; /* Add spacing between links */
+      width: auto; /* Allow the links to take up only the necessary space */
       text-align: left; /* Align the content to the left */
     }
   
     .nav-links-left a {
-      margin-bottom: 0.5rem; /* Add spacing between links */
+      margin-bottom: 0; /* Remove bottom margin for inline links */
       text-align: left; /* Align text to the left */
     }
-  
+
     body {
       margin: 0; /* Remove default margin */
       overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -223,5 +227,6 @@ body {
     header .site-title {  
       font-size: 1.0rem; /* Reduce the site title size on smaller screens */
       text-align: center; /* Center the site title */
+      margin-bottom: 0; /* Remove unnecessary margin */
     }
   }
