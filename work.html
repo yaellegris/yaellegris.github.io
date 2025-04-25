@@ -24,80 +24,76 @@
       rel="stylesheet"
     />
     <style>
+      /* General container for the work section */
       .work-container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 2rem;
       }
-      .row {
-        display: flex;
-        gap: 1rem;
-      }
 
-      .item {
-        flex-basis: 0;
-        aspect-ratio: var(--ratio);
-        flex-grow: calc(var(--ratio));
-      }
+      /* Grid layout for the masonry grid */
       .masonry-grid {
         display: grid;
-        grid-auto-flow: row dense; /* Items flow row by row and fill gaps */
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Define column sizes */
+        grid-auto-rows: 10px; /* Base row height for dynamic row spans */
+        gap: 2rem; /* Consistent spacing between items */
         margin-top: 2rem;
       }
 
-      .grid-container {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-template-columns: var(--grid-columns);
-        gap: var(--grid-gap);
-      }
-
+      /* Individual work items */
       .work-item {
         position: relative;
+        grid-row: span var(--row-span); /* Dynamically span rows based on aspect ratio */
         opacity: 0;
         transform: translateY(20px);
         transition: opacity 0.6s ease-out, transform 0.6s ease-out;
       }
 
+      /* Work items after they are loaded */
       .work-item.loaded {
         opacity: 1;
         transform: translateY(0);
       }
 
+      /* Wrapper for images inside work items */
       .work-item .image-wrap {
         position: relative;
         width: 100%;
         overflow: hidden;
       }
 
+      /* Images inside work items */
       .work-item img {
         width: 100%;
         height: auto;
         object-fit: cover; /* Ensures the image fills the container without distortion */
       }
-      
+
+      /* Hover effect for images */
       .work-item:hover img {
         transform: scale(1.03);
+        transition: transform 0.3s ease;
       }
 
+      /* Title for work items */
       .work-item-title {
         font-size: 1.1rem;
         margin: 0.5rem 0 0 0;
         font-weight: 500;
       }
-     @media (max-width: 1200px) {
-       .grid-container {
-        grid-template-columns: repeat(2, 1fr);
+
+      /* Responsive grid for smaller screens */
+      @media (max-width: 1200px) {
+        .masonry-grid {
+          grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+          gap: 1.5rem; /* Adjust gap for smaller screens */
         }
       }
 
       @media (max-width: 768px) {
         .masonry-grid {
-          grid-template-columns: 1fr;
-          gap: 1rem;
-          grid-template-rows: auto;
+          grid-template-columns: 1fr; /* Single column for small screens */
+          gap: 1rem; /* Adjust gap for smaller screens */
         }
 
         .work-container {
@@ -105,12 +101,14 @@
         }
       }
 
+      /* General body styling */
       body {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
       }
 
+      /* Footer styling */
       .footer {
         margin-top: auto;
         padding: 1rem;
