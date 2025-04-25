@@ -34,8 +34,15 @@
         display: grid;
         grid-auto-flow: row dense; /* Items flow row by row and fill gaps */
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Define column sizes */
-        gap: 2rem; /* Consistent spacing between items */
+        gap: 10px;
         margin-top: 2rem;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto 1fr auto;
+        gap: 10px;
       }
 
       .work-item {
