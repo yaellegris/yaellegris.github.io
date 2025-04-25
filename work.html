@@ -33,7 +33,7 @@
       .masonry-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 1.5rem;
+        gap: rem;
         margin-top: 2rem;
       }
 
@@ -44,9 +44,7 @@
         transform: translateY(20px);
         transition: opacity 0.6s ease-out, transform 0.6s ease-out;
       }
-      .work-item.landscape {
-        grid-column: span 2; /* Make landscape images span 2 columns */
-    }
+
       .work-item.loaded {
         opacity: 1;
         transform: translateY(0);
