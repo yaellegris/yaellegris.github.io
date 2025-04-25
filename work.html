@@ -33,7 +33,7 @@
       .masonry-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: rem;
+        gap: 2rem;
         margin-top: 2rem;
       }
 
@@ -50,10 +50,6 @@
         transform: translateY(0);
       }
 
-      .work-item.landscape {
-        grid-column: span 2; /* Span two columns for landscape images */
-      }
-      
       .work-item .image-wrap {
         position: relative;
         width: 100%;
@@ -156,15 +152,10 @@
       function createWorkItem(image, loadedImage) {
         const workItem = document.createElement('div');
         workItem.className = 'work-item';
-        
+
         const imageWrap = document.createElement('div');
         imageWrap.className = 'image-wrap';
 
-       // Check if the image is landscape or portrait
-       if (loadedImage.naturalWidth > loadedImage.naturalHeight) {
-          workItem.classList.add('landscape'); // Add a class for landscape images
-        }
-              
         // Create a clickable link
         const link = document.createElement('a');
         link.href = image.link || '#'; // Use the link from the image object or '#' as a fallback
