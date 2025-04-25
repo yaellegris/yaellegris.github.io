@@ -32,13 +32,13 @@
 
       .masonry-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns for larger screens */
+        gap: 2rem; /* Consistent spacing between items */
         margin-top: 2rem;
       }
 
       .work-item {
-        margin-bottom: 2rem;
+        margin-bottom: 0; /* Remove the margin-bottom as gap handles spacing */
         position: relative;
         opacity: 0;
         transform: translateY(20px);
@@ -53,13 +53,16 @@
       .work-item .image-wrap {
         position: relative;
         width: 100%;
+        padding-bottom: 100%; /* Creates a square aspect ratio container */
         background: #f5f5f5;
         overflow: hidden;
       }
 
       .work-item img {
+        position: absolute;
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover; /* This makes images cover the container while maintaining aspect ratio */
         display: block;
         transition: transform 0.3s ease;
       }
@@ -74,10 +77,17 @@
         font-weight: 500;
       }
 
+      /* Responsive adjustments */
+      @media (max-width: 1024px) {
+        .masonry-grid {
+          grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+        }
+      }
+
       @media (max-width: 768px) {
         .masonry-grid {
-          grid-template-columns: 1fr;
-          gap: 1rem;
+          grid-template-columns: 1fr; /* 1 column for mobile */
+          gap: 1.5rem;
         }
 
         .work-container {
