@@ -30,7 +30,7 @@
         padding: 0 2rem;
       }
 
-      .masonry-grid {
+      .grid {
         display: grid;
         grid-auto-flow: row dense; /* Items flow row by row and fill gaps */
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Define column sizes */
@@ -155,18 +155,8 @@
         const workItem = document.createElement('div');
         workItem.className = 'work-item';
 
-         // Example: Make certain items span multiple columns/rows
-        if (image.alt === 'Fading imploding') {
-          workItem.style.gridColumn = 'span 2';
-          workItem.style.gridRow = 'span 2';
-        }
-
         const imageWrap = document.createElement('div');
         imageWrap.className = 'image-wrap';
-          
-        const link = document.createElement('a');
-        link.href = image.link || '#';
-        link.target = '_self'; // Open in the same tab (use '_blank' for a new tab)
 
         // Create a clickable link
         const link = document.createElement('a');
