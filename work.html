@@ -41,8 +41,8 @@
       .grid-container {
         display: grid;
         grid-template-columns: 1fr 2fr;
-        grid-template-rows: auto 1fr auto;
-        gap: 10px;
+        grid-template-columns: var(--grid-columns);
+        gap: var(--grid-gap);
       }
 
       .work-item {
@@ -83,7 +83,7 @@
         grid-template-columns: repeat(2, 1fr);
         }
       }
-      
+
       @media (max-width: 768px) {
         .masonry-grid {
           grid-template-columns: 1fr;
