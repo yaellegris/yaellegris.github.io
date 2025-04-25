@@ -168,11 +168,28 @@
 
       // Function to create and append a work item
       function createWorkItem(image, loadedImage) {
-        const workItem = document.createElement('div');
-        workItem.className = 'work-item';
+      const workItem = document.createElement('div');
+      workItem.className = 'work-item';
 
-        const imageWrap = document.createElement('div');
-        imageWrap.className = 'image-wrap';
+      // Calculate and set the row span based on the image's aspect ratio
+      const aspectRatio = loadedImage.naturalHeight / loadedImage.naturalWidth;
+      const rowSpan = Math.ceil(aspectRatio * 100 / 10); // Match the grid-auto-rows value (10px)
+      workItem.style.setProperty('--row-span', rowSpan);
+
+      const imageWrap = document.createElement('div');
+      imageWrap.className = 'image-wrap';
+
+      const link = document.createElement('a');
+      link.href = image.link || '#';
+      link.target = '_self'; // Open in the same tab (use '_blank' for a new tab)
+
+      loadedImage.alt = image.alt;
+      link.appendChild(loadedImage); // Add the image inside the link
+      imageWrap.appendChild(link); // Add the link inside the image wrap
+      workItem.appendChild(imageWrap);
+
+      return workItem;
+    }
 
         // Create a clickable link
         const link = document.createElement('a');
