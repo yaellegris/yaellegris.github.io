@@ -78,7 +78,12 @@
         margin: 0.5rem 0 0 0;
         font-weight: 500;
       }
-
+     @media (max-width: 1200px) {
+       .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      
       @media (max-width: 768px) {
         .masonry-grid {
           grid-template-columns: 1fr;
