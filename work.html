@@ -152,10 +152,15 @@
       function createWorkItem(image, loadedImage) {
         const workItem = document.createElement('div');
         workItem.className = 'work-item';
-
+        
         const imageWrap = document.createElement('div');
         imageWrap.className = 'image-wrap';
 
+       // Check if the image is landscape or portrait
+       if (loadedImage.naturalWidth > loadedImage.naturalHeight) {
+          workItem.classList.add('landscape'); // Add a class for landscape images
+        }
+              
         // Create a clickable link
         const link = document.createElement('a');
         link.href = image.link || '#'; // Use the link from the image object or '#' as a fallback
