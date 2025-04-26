@@ -20,7 +20,7 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Spectral:wght@200;300;400;500;600;700&display=swap" 
+      href="https://fonts.googleapis.com/css2?family=Spectral:wght@200;300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -30,6 +30,7 @@
         padding: 0 2rem;
       }
 
+      /* Original grid (will be hidden when JS masonry is activated) */
       .masonry-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -37,8 +38,23 @@
         margin-top: 2rem;
       }
 
+      /* Custom masonry container (will be shown by JS) */
+      .masonry-container {
+        display: flex;
+        width: 100%;
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .masonry-column {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem; /* This creates the consistent vertical spacing */
+        flex: 1;
+      }
+
       .work-item {
-        margin-bottom: 2rem;
+        margin-bottom: 0; /* Remove default margin since we use gap */
         position: relative;
         opacity: 0;
         transform: translateY(20px);
@@ -75,8 +91,17 @@
       }
 
       @media (max-width: 768px) {
-        .masonry-grid {
+        .masonry-grid,
+        .masonry-container {
           grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+
+        .masonry-container {
+          flex-direction: column;
+        }
+
+        .masonry-column {
           gap: 1rem;
         }
 
@@ -120,45 +145,83 @@
     <script>
       // Array of image information
       const workImages = [
-      { src: 'images/work/interior1(2025).png',
-          alt: 'Interior 1', link: 'work/interior1.html' }, 
-      { src: 'images/work/horse_temp_details_2025.jpg',
-          alt: 'Untitled', link: 'work/untitled(2025).html' }, 
-      { src: 'images/work/pascal_main.png', alt: 'Pascal Main', link: 'work/pascal.html' },
-        { src: 'images/work/grief_main.png',
-          alt: 'Grief Series Main', link: 'work/grief.html' },
-        { src: 'images/work/fading:imploding_2023.png', alt: 'Fading imploding', link: 'work/fading-imploding.html' },
-        { src: 'images/work/Dereck-PopUp.jpg', alt: 'Dereck', link: 'work/dereck.html' },
-        { src: 'images/work/legend.png', alt: 'Legend', link: 'work/legend.html' },
+        {
+          src: 'images/work/interior1(2025).png',
+          alt: 'Interior 1',
+          link: 'work/interior1.html',
+        },
+        {
+          src: 'images/work/horse_temp_details_2025.jpg',
+          alt: 'Untitled',
+          link: 'work/untitled(2025).html',
+        },
+        {
+          src: 'images/work/pascal_main.png',
+          alt: 'Pascal Main',
+          link: 'work/pascal.html',
+        },
+        {
+          src: 'images/work/grief_main.png',
+          alt: 'Grief Series Main',
+          link: 'work/grief.html',
+        },
+        {
+          src: 'images/work/fading:imploding_2023.png',
+          alt: 'Fading imploding',
+          link: 'work/fading-imploding.html',
+        },
+        {
+          src: 'images/work/Dereck-PopUp.jpg',
+          alt: 'Dereck',
+          link: 'work/dereck.html',
+        },
+        {
+          src: 'images/work/legend.png',
+          alt: 'Legend',
+          link: 'work/legend.html',
+        },
         {
           src: 'images/work/iseered_2021.png',
-          alt: 'I See Red', 
+          alt: 'I See Red',
           link: 'work/iseered.html',
         },
         {
           src: 'images/work/untitled_red_portrait_2020.jpg',
-          alt: 'Untitled Portrait (2020) ', 
+          alt: 'Untitled Portrait (2020) ',
           link: 'work/untitled(2020).html',
         },
         {
           src: "images/work/Sittin'With_A_Demon_PopUp_small.jpg",
-          alt: 'Sitting With A Demon', 
+          alt: 'Sitting With A Demon',
           link: 'work/sittinwithademon.html',
         },
-        { src: 'images/work/heaven&hell1.jpg', alt: 'Heaven and hell', link: 'work/heavenandhell.html'},
-        { src: 'images/work/Céleste-PopUp.jpg', alt: 'Céleste', link: 'work/céleste.html'},
-       
-        { src: 'images/work/icanseeit(2020).jpg', alt: 'I can see it', link: 'work/icanseeit.html'},
+        {
+          src: 'images/work/heaven&hell1.jpg',
+          alt: 'Heaven and hell',
+          link: 'work/heavenandhell.html',
+        },
+        {
+          src: 'images/work/Céleste-PopUp.jpg',
+          alt: 'Céleste',
+          link: 'work/céleste.html',
+        },
+
+        {
+          src: 'images/work/icanseeit(2020).jpg',
+          alt: 'I can see it',
+          link: 'work/icanseeit.html',
+        },
 
         {
           src: 'images/work/untitled (2019).png',
-          alt: 'Untitled 2019', link: 'work/untitled(2019).html'
+          alt: 'Untitled 2019',
+          link: 'work/untitled(2019).html',
         },
         {
           src: 'images/work/self_portrait.jpg',
-          alt: 'Self Portrait', 
-          link: 'work/self-portrait.html'
-        }
+          alt: 'Self Portrait',
+          link: 'work/self-portrait.html',
+        },
       ];
 
       // Function to preload an image
@@ -192,38 +255,78 @@
         return workItem;
       }
 
-      // Function to add a single image to the grid with animation
-      function addImageToGrid(grid, workItem, delay) {
-        return new Promise((resolve) => {
-          setTimeout(() => {
-            grid.appendChild(workItem);
-            // Trigger reflow to ensure animation plays
-            workItem.offsetHeight;
-            workItem.classList.add('loaded');
-            resolve();
-          }, delay);
-        });
-      }
+      // Implement masonry layout with equal vertical spacing
+      async function createMasonryLayout() {
+        const workContainer =
+          document.querySelector('.work-container');
+        const originalGrid = document.getElementById('masonry-grid');
 
-      // Function to populate the grid with preloaded images
-      async function populateGrid() {
-        const grid = document.getElementById('masonry-grid');
-        const DELAY_BETWEEN_IMAGES = 150; // Delay in milliseconds between each image
+        // Create masonry container
+        const masonryContainer = document.createElement('div');
+        masonryContainer.className = 'masonry-container';
 
-        try {
-          // Load images one by one
-          for (let i = 0; i < workImages.length; i++) {
-            const loadedImage = await preloadImage(workImages[i].src);
-            const workItem = createWorkItem(workImages[i], loadedImage);
-            await addImageToGrid(grid, workItem, DELAY_BETWEEN_IMAGES);
-          }
-        } catch (error) {
-          console.error('Error loading images:', error);
+        // Number of columns (3 for desktop)
+        const numColumns = window.innerWidth <= 768 ? 1 : 3;
+
+        // Create columns
+        const columns = [];
+        for (let i = 0; i < numColumns; i++) {
+          const column = document.createElement('div');
+          column.className = 'masonry-column';
+          masonryContainer.appendChild(column);
+          columns.push(column);
         }
+
+        // Preload all images first
+        const preloadedImages = [];
+        for (const image of workImages) {
+          try {
+            const loadedImage = await preloadImage(image.src);
+            preloadedImages.push({ image, loadedImage });
+          } catch (error) {
+            console.error('Error loading image:', image.src, error);
+          }
+        }
+
+        // Add each image to the shortest column
+        let currentCol = 0;
+        const DELAY_BETWEEN_IMAGES = 150;
+
+        for (const { image, loadedImage } of preloadedImages) {
+          // Create work item
+          const workItem = createWorkItem(image, loadedImage);
+
+          // Add to current column and move to next column
+          columns[currentCol].appendChild(workItem);
+          currentCol = (currentCol + 1) % numColumns;
+
+          // Add animation with delay
+          setTimeout(() => {
+            workItem.classList.add('loaded');
+          }, DELAY_BETWEEN_IMAGES);
+        }
+
+        // Replace original grid with masonry container
+        originalGrid.style.display = 'none';
+        workContainer.appendChild(masonryContainer);
       }
-      
+
       // Call the function when the page loads
-      document.addEventListener('DOMContentLoaded', populateGrid);
+      document.addEventListener(
+        'DOMContentLoaded',
+        createMasonryLayout
+      );
+
+      // Update layout on resize
+      window.addEventListener('resize', () => {
+        const masonryContainer = document.querySelector(
+          '.masonry-container'
+        );
+        if (masonryContainer) {
+          masonryContainer.remove();
+          createMasonryLayout();
+        }
+      });
     </script>
     <script src="script.js"></script>
     <footer class="footer">
