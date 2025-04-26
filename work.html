@@ -108,32 +108,61 @@
         .work-container {
           padding: 0 1rem;
         }
-         /* Add these styles to match index.html header */
         .site-nav {
-          padding: 1rem;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
+          display: flex; /* Use flexbox for layout */
+          justify-content: space-between; /* Space between nav links and title */
+          align-items: center; /* Vertically align items */
+          padding: 1rem; /* Add padding around the navigation */
+          width: 100%; /* Ensure the navigation bar spans the full width */
+          box-sizing: border-box; /* Include padding in the width calculation */
+        }
+
+        .nav-links-left {
+          display: flex; /* Ensure the links are displayed in a row */
+          gap: 0.5rem; /* Add spacing between links */
+          width: auto; /* Allow the links to take up only the necessary space */
+          text-align: left; /* Align the content to the left */
+        }
+      
+        .nav-links-left a {
+          font-size: 0.5rem; /* Reduce the font size of the links */
+          margin-bottom: 0; /* Remove bottom margin for inline links */
+          text-align: left; /* Align text to the left */
+        }
+
+        body {
+          margin: 0; /* Remove default margin */
+          overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+      
+        .footer__content {
+          padding: 1rem; /* Add padding to the footer for smaller screens */
+          font-size: 0.8rem; /* Make the footer text slightly smaller */
         }
 
         .site-title {
-          margin: 0.5rem 0;
-          font-size: 1.5rem;
-        }
-
-        .nav-links-left,
-        .nav-links-right {
-          margin: 0.5rem 0;
-          width: 100%;
-          justify-content: center;
-        }
-
-        .nav-links-left a,
-        .nav-links-right a {
-          font-size: 0.9rem;
-          margin: 0 0.5rem;
-        }
+          font-size: 1.0rem !important; /* Make the title smaller */
+          text-align: right !important; /* Align the title text to the right */
+          margin-left: auto !important; /* Push the title to the right */
+          margin-right: 0 !important; /* Remove right margin */
+          width: auto !important; /* Allow natural width instead of fixed 33.33% */
+          padding-right: 1rem; /* Add some padding on the right */
+          flex-grow: 1; /* Allow it to take available space */
+          display: flex; /* Enable flexbox */
+          justify-content: flex-end; /* Right align the content */
       }
+
+        .home-title {
+          font-size: 1.0rem !important;
+          text-align: right !important;
+          margin-left: auto !important;
+          margin-right: 0 !important;
+          width: auto !important;
+          padding-right: 0.5rem;
+          flex-shrink: 0;
+        }
+    }
+      
 
       body {
         min-height: 100vh;
