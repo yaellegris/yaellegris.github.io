@@ -413,6 +413,38 @@
           masonryContainer.remove();
           createMasonryLayout();
         }
+
+
+      // Store scroll position and last width
+      let scrollPosition = 0;
+      let lastWidth = window.innerWidth;
+      let resizeTimeout;
+
+      // Update layout on resize - optimized to prevent jumps
+      window.addEventListener('resize', () => {
+        // Only rebuild layout if width actually changes (not on scroll/zoom)
+        if (window.innerWidth !== lastWidth) {
+          // Store current scroll position
+          scrollPosition = window.scrollY;
+          
+          // Clear previous timeout to prevent multiple rebuilds
+          if (resizeTimeout) clearTimeout(resizeTimeout);
+          
+          // Wait for resize to finish before rebuilding
+          resizeTimeout = setTimeout(() => {
+            const masonryContainer = document.querySelector('.masonry-container');
+            if (masonryContainer) {
+              masonryContainer.remove();
+              createMasonryLayout();
+              
+              // Restore scroll position after layout rebuilds
+              setTimeout(() => {
+                window.scrollTo(0, scrollPosition);
+              }, 100);
+            }
+            lastWidth = window.innerWidth; // Update the stored width
+          }, 250);
+        }
       });
     </script>
     <script src="script.js"></script>
