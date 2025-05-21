@@ -388,24 +388,69 @@
         // Replace original grid with masonry container
         originalGrid.style.display = 'none';
         workContainer.appendChild(masonryContainer);
+      
+       // Add this at the end before the final closing brace:
+       return new Promise(resolve => {
+          setTimeout(resolve, DELAY_BETWEEN_IMAGES + 50);
+        });
       }
-
       // Call the function when the page loads
       document.addEventListener(
         'DOMContentLoaded',
         createMasonryLayout
       );
 
-      // Update layout on resize
-      window.addEventListener('resize', () => {
-        const masonryContainer = document.querySelector(
-          '.masonry-container'
-        );
-        if (masonryContainer) {
-          masonryContainer.remove();
-          createMasonryLayout();
-        }
-      });
+      // Store scroll position and last width
+      let scrollPosition = 0;
+      let lastWidth = window.innerWidth;
+      let resizeTimeout;
+      let isScrolling = false;
+
+     // Improved resize handler to prevent jumps at the top of the page
+    window.addEventListener('resize', () => {
+      // Prevent layout rebuilding during scroll momentum
+      if (isScrolling) return;
+      
+      // Only rebuild if width change is significant (avoid address bar triggers)
+      if (Math.abs(window.innerWidth - lastWidth) > 20) {
+        // Store current scroll position
+        scrollPosition = window.scrollY;
+        
+        if (resizeTimeout) clearTimeout(resizeTimeout);
+        
+        resizeTimeout = setTimeout(() => {
+          const masonryContainer = document.querySelector('.masonry-container');
+          if (masonryContainer) {
+            // Only rebuild if we're still at approximately the same place
+            if (Math.abs(window.scrollY - scrollPosition) < 150) {
+              masonryContainer.remove();
+              createMasonryLayout();
+              
+              // Restore scroll position after rebuild
+              setTimeout(() => {
+                window.scrollTo(0, scrollPosition);
+              }, 100);
+            }
+          }
+          lastWidth = window.innerWidth;
+        }, 300); // Longer delay for better stability
+      }
+    });
+
+    // Track scroll state to prevent resize during momentum scrolling
+    window.addEventListener('scroll', () => {
+      isScrolling = true;
+      
+      if (window.scrollY < 100) {
+        // In the top zone - be extra careful about rebuilding
+        lastWidth = window.innerWidth; // Update width to prevent rebuilds
+      }
+      
+      clearTimeout(window.scrollEndTimer);
+      window.scrollEndTimer = setTimeout(() => {
+        isScrolling = false;
+      }, 100);
+    }, { passive: true });
     </script>
     <script src="script.js"></script>
     <footer class="footer">
