@@ -33,6 +33,7 @@
       .about-content {
         display: grid;
         grid-template-columns: 50fr 50fr;
+        align-items: start; /* align top of image with top of text */
         gap: 6rem;
         margin-top: 2rem;
       }
@@ -88,7 +89,7 @@
         display: flex;
         align-items: flex-start; /* place the image at the top of its container */
         justify-content: center;
-        padding: 1rem; /* optional spacing inside the box */
+        padding: 0; /* remove top padding so image aligns with text */
         animation: fadeInUp 0.8s ease-out 0.2s forwards;
       }
 
